@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyled = createGlobalStyle`
-html, body, div, span, applet, object, iframe,
+html, body,button, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -54,10 +54,10 @@ button{
 }
 
 :root {
-	--brand100: #27AE60;
-	--brand200: #EB5757;
-	--brand100-: rgba(39, 174, 96, 0.1);
-	--black100: #000000;
+	--primary100: #FF9370;
+	--primary200: #FFE2DA;
+	--secundary100: #9B8DB7;
+	--black100: #303030;
 	--white100: #ffffff;
 	--negative100: #E60000;
 	--sucess100: #168821;
@@ -66,7 +66,8 @@ button{
 	--gray100: #333333;
 	--gray200: #828282;
 	--gray300: #E0E0E0;
-	--gray400: #F5F5F5;
+	--gray400: #F6F6F6;
+	--font-size-0: 32px;
 	--font-size-1: 26px;
 	--font-size-2: 22px;
 	--font-size-3: 18px;
@@ -77,20 +78,20 @@ button{
 	--font-weight-2: 600;
 	--font-weight-3: 400;
 	--line-height: 150%;
-	--font-family: "Inter", sans-serif;
+	--font-family-1: "Anton", sans-serif;
+	--font-family-2: "Heebo", sans-serif;
 }
 
 body {
-	font-family: var(--font-family);
 	background-color: var(--color-white-1);
 }
 
 button,
 input,
-select {
-	font-family: var(--font-family);
-	font-size: var(--font-size-3);
-	line-height: var(--line-height);
+select, textarea {
+	font-family: var(--font-family-2);
+	font-size: inherit;
+	line-height: inherit;
 }
 
 `;
