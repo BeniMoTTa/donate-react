@@ -5,8 +5,6 @@ import { StyledDashboard } from "./style";
 
 const DashBoard = () => {
     return (<StyledDashboard>
-        <AsideMenu />
-        <Header />
         <DashboardHeader />
     </StyledDashboard>);
 };
