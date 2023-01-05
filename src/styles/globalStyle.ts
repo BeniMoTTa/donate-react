@@ -99,4 +99,15 @@ select, textarea {
 	line-height: inherit;
 }
 
+@keyframes slideLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
 `;

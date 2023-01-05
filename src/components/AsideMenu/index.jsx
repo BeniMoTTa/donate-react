@@ -6,52 +6,51 @@ import { ImInstagram } from "react-icons/im";
 import { AsideDiv, AsideFooter, ButtonDiv } from "./style";
 
 const AsideMenu = () => {
-  return (
-    <AsideDiv>
-      <div className="headerAside">
-        <div>
-          <img src={Logo} alt="" />
-        </div>
-      </div>
 
-      <ButtonDiv>
-        <Link to="/home" className="hoverUnderLineAnimation">
-          Home
-        </Link>
+	return (
+		<AsideDiv>
+			<div className="headerAside">
+				<div>
+					<img src={Logo} alt="" />
+				</div>
+			</div>
 
-        <Link to="/login" className="hoverUnderLineAnimation">
-          Login
-        </Link>
+			<ButtonDiv>
+				<Link to="/home" className="hoverUnderLineAnimation">
+					Home
+				</Link>
 
-        <Link to="/register" className="hoverUnderLineAnimation">
-          Register
-        </Link>
+				<Link to="/login" className="hoverUnderLineAnimation">
+					Login
+				</Link>
 
-        <Link to="/profile" className="hoverUnderLineAnimation">
-          Profile
-        </Link>
+				<Link to="/register" className="hoverUnderLineAnimation">
+					Register
+				</Link>
 
-        <Link to="/dashboard" className="hoverUnderLineAnimation">
-          Dashboard
-        </Link>
-      </ButtonDiv>
+				<Link to="/profile" className="hoverUnderLineAnimation">
+					Profile
+				</Link>
 
-      <AsideFooter>
-        <div className="socialMedia">
-          <FaFacebookF />
-          <FaTwitter />
-          <ImInstagram />
-        </div>
+				<Link to="/dashboard" className="hoverUnderLineAnimation">
+					Dashboard
+				</Link>
+			</ButtonDiv>
 
-        <div className="divBar"></div>
+			<AsideFooter>
+				<div className="socialMedia">
+					<FaFacebookF />
+					<FaTwitter />
+					<ImInstagram />
+				</div>
 
-        <div className="divContact">
-          <p>(**)*******-**</p>
-          <p>doGood@mail.com</p>
-        </div>
-      </AsideFooter>
-    </AsideDiv>
-  );
+				<div className="divContact">
+					<p>(**)*******-**</p>
+					<p>doGood@mail.com</p>
+				</div>
+			</AsideFooter>
+		</AsideDiv>
+	);
 };
 
 export default AsideMenu;

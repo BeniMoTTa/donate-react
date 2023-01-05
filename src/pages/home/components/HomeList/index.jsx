@@ -1,9 +1,13 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import AnimatedBanner from "../../../../components/AnimatedBanner";
+import { AuthContext } from "../../../../context/AuthContext";
 import { StyledHomeList, StyledHomeCard } from "./style";
 
-const HomeList = ({ users }) => {
-	// const { name, description, img , id} = users;
+const HomeList = () => {
+	const { users } = React.useContext(AuthContext);
+
+
 	const user = [
 		{
 			id: 10,
@@ -75,8 +79,8 @@ const HomeList = ({ users }) => {
 											<span className="bar-grey" />
 										</span>
 										<div className="stats">
-											<span>Arrecadados: ${raised.toLocaleString()}</span>
-											<span>Meta: ${goal.toLocaleString()}</span>
+											<span>Arrecadados: ${raised}</span>
+											<span>Meta: ${goal}</span>
 										</div>
 									</div>
 								</li>

@@ -9,8 +9,6 @@ import AsideMenu from "../../components/AsideMenu";
 const HomePage = () => {
   return (
     <StyledHomePage>
-      <AsideMenu />
-      <Header />
       <HomeHeader />
       <HomeList />
       <HomeContact />

@@ -6,17 +6,19 @@ export const StyledHomeContact = styled.section`
 	gap: 50px;
 	font-family: var(--font-family-2);
 	color: var(--black100);
+	padding-top: 50px;
+	padding-bottom: 50px;
 
-	.map {
-		height: max(500px,100%);
+	.contactMap {
+		height: 400px;
 	}
 
 	.contactText {
 		display: flex;
 		padding-left: 16px;
 		flex-direction: column;
-		gap: 16px;
-		padding: 100px 16px;
+		gap: 16px;	
+		padding-top: 32px;
 
 		> h2 {
 			font-family: var(--font-family-1);
@@ -28,7 +30,7 @@ export const StyledHomeContact = styled.section`
 		}
 
 		> form {
-			margin-top: 32px;
+			padding-top: 32px;
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
@@ -66,6 +68,7 @@ export const StyledHomeContact = styled.section`
 
 		.contactMap {
 			width: 50%;
+			height: 100%;
 		}
 
 		.contactText {

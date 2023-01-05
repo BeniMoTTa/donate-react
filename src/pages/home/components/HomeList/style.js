@@ -98,6 +98,13 @@ export const StyledHomeCard = styled.a`
 			font-size: 0.875rem;
 			font-family: var(--font-family-2);
 			color: var(--black100);
+			display: block;
+			display: -webkit-box;
+			max-width: 50ch;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 	}
 
