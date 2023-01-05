@@ -3,12 +3,15 @@ import styled from "styled-components";
 export const StyledHomeContact = styled.section`
 	display: flex;
 	flex-direction: column;
-	gap: 50px;
+	gap: 30px;
 	font-family: var(--font-family-2);
 	color: var(--black100);
+	padding-top: 50px;
+	padding-bottom: 50px;
 
-	.map {
-		height: max(500px,100%);
+	.contactMap {
+		width: 100%;
+		height: 500px;
 	}
 
 	.contactText {
@@ -16,7 +19,6 @@ export const StyledHomeContact = styled.section`
 		padding-left: 16px;
 		flex-direction: column;
 		gap: 16px;
-		padding: 100px 16px;
 
 		> h2 {
 			font-family: var(--font-family-1);

@@ -12,7 +12,7 @@ export function RoutesMain() {
 			<Route path="/register" element={<Register />} />
 			<Route path="/dashboard" element={<DashBoard />} />
 			<Route path="/home" element={<HomePage />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/:id" element={<Profile />} />
 			<Route path="*" element={<Navigate to="/login" />} />
 		</Routes>
 	);
