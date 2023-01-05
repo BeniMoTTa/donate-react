@@ -1,8 +1,13 @@
-import { StyledDashboard} from "./style";
+import AsideMenu from "../../components/AsideMenu";
+import Header from "../../components/Header/Header";
+import DashboardHeader from "./components/DashboardHeader";
+import { StyledDashboard } from "./style";
 
 const DashBoard = () => {
-	return (<StyledDashboard>
-        <h1>DashBoard</h1>
+    return (<StyledDashboard>
+        <AsideMenu />
+        <Header />
+        <DashboardHeader />
     </StyledDashboard>);
 };
 
