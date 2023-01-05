@@ -27,6 +27,8 @@ export const StyledDashboardHeader = styled.header`
 `;
 
 
+
+
 /* .hero-section {
 	background: url(${image});
 	padding: 260px 0;
