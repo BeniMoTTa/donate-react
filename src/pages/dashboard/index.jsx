@@ -1,9 +1,19 @@
-import { StyledDashboard} from "./style";
+import DashControlPanel from "./components/DashControlPanel";
+import DashboardHeader from "./components/DashHeader";
+import { StyledDashboard } from "./style";
 
 const DashBoard = () => {
-	return (<StyledDashboard>
-        <h1>DashBoard</h1>
-    </StyledDashboard>);
+    return (
+        <StyledDashboard>
+            <DashboardHeader />
+            <DashControlPanel />
+
+
+
+        </StyledDashboard>
+    )
+
+
 };
 
 export default DashBoard;

@@ -3,34 +3,36 @@ import styled from "styled-components";
 export const StyledLogin = styled.div`
   margin: 0 auto;
   form {
-    width: 580px;
-    margin: 0px 8px;
+    width: 100%;
+    margin: 0px 23px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    position: absolute;
-    bottom: -25px;
+    position: relative;
+    top: 120px;
     text-align: left;
   }
 
   form h1 {
-    font-size: 46px;
+    font-size: 36px;
     font-weight: 800;
-    color: #9b8db7;
+    color: var(--secundary100);
+    font-family: var(--font-family-1);
   }
 
   .form-div {
     display: flex;
-    gap: 41px;
+    gap: 20px;
     flex-direction: column;
   }
 
   .question-div {
-    margin: 60px 0px;
-    width: 430px;
+    margin: 35px 0px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 40px;
+
     .hoverUnderLineAnimation {
       display: inline-block;
       position: relative;
@@ -57,28 +59,33 @@ export const StyledLogin = styled.div`
   }
 
   .question-div p {
-    font-size: 25px;
+    font-size: var(--font-size-1);
     font-weight: 800;
-    color: #9b8db7;
+    color: var(--secundary100);
+    font-family: var(--font-family-1);
   }
 
   .question-div a {
     width: 194px;
     color: black;
-    font-size: 17px;
+    font-size: var(--font-size-2);
     font-weight: 800;
+    font-family: var(--font-family-1);
   }
 
   @media (min-width: 900px) {
     margin: 0px 0px;
+    height: 95vh;
     display: flex;
     gap: 40px;
+    animation: slideLeft 0.4s ease forwards;
 
     form {
-      width: 600px;
+      width: 570px;
       margin: 90px 0px;
       display: flex;
       position: relative;
+      top: 0;
       bottom: 0;
       flex-direction: column;
       text-align: left;
@@ -87,7 +94,8 @@ export const StyledLogin = styled.div`
     form h1 {
       font-size: 46px;
       font-weight: 800;
-      color: #9b8db7;
+      color: var(--secundary100);
+      font-family: var(--font-family-1);
     }
 
     .form-div {
@@ -149,18 +157,18 @@ export const StyledLogin = styled.div`
         transform: scaleX(1);
         transform-origin: bottom left;
       }
+
+      font-family: var(--font-family-2);
     }
 
     .question-div p {
-      font-size: 20px;
       font-weight: 800;
-      color: #9b8db7;
+      color: var(--secundary100);
     }
 
     .question-div a {
       width: 194px;
       color: black;
-      font-size: 17px;
       font-weight: 800;
     }
   }
@@ -183,7 +191,9 @@ export const ImageDiv = styled.div`
 
 export const LogButton = styled.button`
   width: 64px;
-  color: black;
+  color: var(--black100);
+  background-color: transparent;
   font-size: 20px;
   font-weight: 800;
+  font-family: var(--font-family-1);
 `;

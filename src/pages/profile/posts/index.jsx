@@ -1,18 +1,19 @@
+import React from "react";
 import { StyledPosts } from "./style";
 import PostCard from "./postCard";
 
-const PostsList = () =>{
-    return( 
-        <>
-            <StyledPosts>
-                <h3>Minhas Postagens</h3> 
-                    <PostCard/>
-                    <PostCard/>
-                    <PostCard/>
-                    <PostCard/>
-            </StyledPosts>
-        </>
-    )
-}
+const PostsList = ({ user }) => {
+	return (
+		<StyledPosts>
+			<h3>POSTAGENS</h3>
+			<ul>
+				<PostCard />
+				<PostCard />
+				<PostCard />
+				<PostCard />
+			</ul>
+		</StyledPosts>
+	);
+};
 
-export default PostsList
+export default PostsList;

@@ -1,3 +1,7 @@
 import styled from "styled-components";
-export const StyledProfile = styled.main`
+
+const StyledProfile = styled.section`
+
 `;
+
+export default StyledProfile;

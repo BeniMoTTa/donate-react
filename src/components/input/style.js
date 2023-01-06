@@ -73,25 +73,26 @@ export const StyledInput = styled.input`
       `;
     }
   }}
-  font-family: inherit;
-  width: 100%;
-  border: 0;
+  width: 90%;
+  height: 36px;
   border-bottom: 2px solid black;
-  outline: 0;
-  font-size: 1.3rem;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
 
-  @media screen and (max-width: 1024px) {
-    width: 90%;
+  @media (min-width: 900px) {
+    font-family: inherit;
+    width: 100%;
+    height: 55px;
+    border: 0;
+    border-bottom: 2px solid black;
+    outline: none;
+    font-size: 1.3rem;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
   }
 `;
 
 export const Wrapper = styled.div`
   position: relative;
-  padding: 15px 0 0;
-  margin-top: 10px;
   width: 99%;
 `;
 
@@ -128,3 +129,4 @@ export const StyledP = styled.p`
     }
   }
 `;
+

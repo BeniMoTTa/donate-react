@@ -67,6 +67,7 @@ button{
 	--gray200: #828282;
 	--gray300: #E0E0E0;
 	--gray400: #F6F6F6;
+	--font-title-0: 36px;
 	--font-size-0: 32px;
 	--font-size-1: 26px;
 	--font-size-2: 22px;

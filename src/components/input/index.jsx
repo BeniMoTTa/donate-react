@@ -6,9 +6,8 @@ export const Input = forwardRef(({ type, id, error, label, ...rest }, ref) => {
     <>
       <Wrapper>
         <StyledInput type={type} error={error} id={id} ref={ref} {...rest} />
-        <Label>{label}</Label>
+        {error && <StyledP>{error.message}</StyledP>}
       </Wrapper>
-      {error && <StyledP>{error.message}</StyledP>}
     </>
   );
 });
