@@ -4,7 +4,6 @@ import "react-toastify/dist/ReactToastify.css";
 const ProfileHeader = ({ user, totalRaised, openModal }) => {
 	if (!user) return null;	
 
-	// if (!totalRaised) return null;
 
 	return (
 		<>

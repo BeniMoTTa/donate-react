@@ -27,9 +27,16 @@ const DonationModal = ( { openModal, setShowModal, user } ) => {
     })
 
     async function donate ( data ) {
+        delete data.name
+        delete data.phone
+        delete data.email
+        delete data.card
+        delete data.date
+        delete data.cvc
+        
+
         try {
             const response = await api.post("/donations", data)
-            console.log(response)
             toast.success("Doação realizada com sucesso!");
             getDonations()
             setShowModal(false)
