@@ -6,11 +6,15 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { profileUpdateSchema } from "./profileUpdateSchema";
 import Textarea from "../../../../../components/TextArea";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { DashContext } from "../../../../../context/DashContext";
 
 
 const DashProfileForm = () => {
     const [editActive, setEditActive] = useState(true);
+    const [loadingUpdateUser, setLoadingUpdateUser] = useState(false);
+
+    const { updateUser, currentUser, getCurrentUser } = useContext(DashContext);
 
     const unlockEditProfile = () => {
         setEditActive(!editActive);
@@ -22,12 +26,12 @@ const DashProfileForm = () => {
         formState: { errors },
     } = useForm({
         mode: "onBlur",
-        resolver: yupResolver(profileUpdateSchema),
+        resolver: yupResolver(profileUpdateSchema)
     });
 
 
     function submit(data) {
-        console.log(data);
+        updateUser(data, setLoadingUpdateUser);
     }
 
 
@@ -42,7 +46,7 @@ const DashProfileForm = () => {
                 </span>
             </StyledButton>
 
-            <form noValidate>
+            <form noValidate onSubmit={handleSubmit(submit)}>
                 <div>
                     <div>
                         <Input
@@ -50,13 +54,15 @@ const DashProfileForm = () => {
                             id="name"
                             type="text"
                             error={errors.name}
+                            defaultValue={currentUser?.name}
                             {...register("name")}
                         />
                         <Input
                             placeholder="Meta"
                             id="goal"
-                            type="number"
+                            type="text"
                             error={errors.goal}
+                            defaultValue={currentUser?.goal}
                             {...register("goal")}
                         />
                     </div>
@@ -67,6 +73,7 @@ const DashProfileForm = () => {
                             id="password"
                             type="password"
                             error={errors.password}
+                            defaultValue={currentUser?.password}
                             {...register("password")}
                         />
                         <Input
@@ -74,6 +81,7 @@ const DashProfileForm = () => {
                             id="image"
                             type="text"
                             error={errors.image}
+                            defaultValue={currentUser?.image}
                             {...register("image")}
                         />
                     </div>
@@ -83,8 +91,12 @@ const DashProfileForm = () => {
                     id="description"
                     label="SOBRE"
                     error={errors.description}
+                    defaultValue={currentUser?.description}
                     {...register("description")} />
-                <StyledButton buttonSize="medium" buttonStyle="dashSubmit">
+                <StyledButton
+                    type="submit"
+                    buttonSize="medium"
+                    buttonStyle="dashSubmit">
                     ATUALIZAR INFORMAÇÕES
                 </StyledButton>
             </form>

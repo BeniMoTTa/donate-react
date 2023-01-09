@@ -9,10 +9,12 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { Button } from "../../components/Button";
 
 const Register = () => {
-  const Navigate = useNavigate();
-  const { getUsers } = useContext( AuthContext )
+  const { reqRegister } = useContext(AuthContext);
+
+  const { getUsers } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -21,18 +23,8 @@ const Register = () => {
     resolver: yupResolver(RegisterSchema),
   });
 
-  const ReqRegister = async (data) => {
-    try {
-      const response = await api.post("/register", data);
-      getUsers()
-      Navigate("/login");
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   function registerForm(data) {
-    ReqRegister(data);
+    reqRegister(data);
   }
 
   return (
@@ -90,9 +82,13 @@ const Register = () => {
             {...register("description")}
           />
         </div>
-        <RegisterButton className="hover-underline-animation">
-          CADASTRAR
-        </RegisterButton>
+
+        <Button
+          name={"CADASTRAR"}
+          size={"small"}
+          style={"brand3"}
+          className="hover-underline-animation"
+        />
       </form>
     </StyledRegister>
   );

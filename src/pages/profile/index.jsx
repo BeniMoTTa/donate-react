@@ -7,6 +7,7 @@ import { AuthContext } from "../../context/AuthContext";
 import DonationModal from "../../components/DonationModal";
 import ProfilePostModal from "./profilePostModal";
 import { DashContext } from "../../context/DashContext";
+import Footer from "../home/components/HomeFooter";
 
 const Profile = () => {
 	const { users, donation} = React.useContext(AuthContext);
@@ -42,6 +43,7 @@ const Profile = () => {
                	size={"default"}
                 click={openProfilePost}
             />	
+			<Footer/>
 		</StyledProfile>
 	);
 };

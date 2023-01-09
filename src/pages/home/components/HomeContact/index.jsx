@@ -1,6 +1,14 @@
 import { StyledHomeContact } from "./style";
+import {toast} from "react-toastify";
 
 const HomeContact = () => {
+
+	const handleFormContact = (e) => {
+		e.preventDefault();
+		toast.success("Obrigado pela sua mensagem. Em breve, entraremos em contato")
+		
+	}
+
 	return (
 		<StyledHomeContact>
 			<div className="contactMap">
@@ -17,7 +25,7 @@ const HomeContact = () => {
 			<div className="contactText">
 				<h2>ENTRE EM CONTATO</h2>
 				<span>Alguma duvida? Fale com um de nossos atendentes</span>
-				<form>
+				<form onSubmit={handleFormContact}>
 					<input placeholder="E-mail" />
 					<input placeholder="Senha" />
 					<textarea placeholder="Mensagem" />

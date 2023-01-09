@@ -7,7 +7,8 @@ export const profileUpdateSchema = yup.object().shape({
         .min(3, "O nome precisa de pelo menos 3 caracteres")
         .max(60, "O nome pode ter no máximo 60 caracteres."),
     goal: yup
-        .number("Inserir apenas números")
+        .string()
+        .matches(/(^[0-9]*$)/, "Inserir apenas números")
         .required("Valor obrigatório"),
     password: yup
         .string()
@@ -24,4 +25,3 @@ export const profileUpdateSchema = yup.object().shape({
         .string(),
     description: yup.string().max(800, "Limite de 800 caracteres")
 });
-

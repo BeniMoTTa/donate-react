@@ -61,8 +61,8 @@ export const StyledInput = styled.input`
     } else {
       return css`
         ::placeholder {
-          color: black;
-          font-weight: 500;
+          color: var(--black100);
+          font-weight: var(--font-weight-2);
         }
 
         & :valid {
@@ -100,6 +100,7 @@ export const StyledP = styled.p`
   color: red;
   font-weight: 700;
   text-align: left;
+  margin-top: 2px;
 
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
@@ -129,4 +130,3 @@ export const StyledP = styled.p`
     }
   }
 `;
-

@@ -6,10 +6,12 @@ import { useForm } from "react-hook-form";
 import { LoginSchema } from "./loginSchema";
 import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
-
+import { Button } from "../../components/Button";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
-  const Navigate = useNavigate();
+  const { reqLogin } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -18,20 +20,8 @@ const Login = () => {
     resolver: yupResolver(LoginSchema),
   });
 
-  const ReqLogin = async (data) => {
-    try {
-      const response = await api.post("/login", data);
-
-      window.localStorage.setItem("@USER:ID", response.data.user.id);
-      window.localStorage.setItem("@USER:TOKEN", response.data.accessToken);
-      Navigate("/dashboard");
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   function loginForm(data) {
-    ReqLogin(data);
+    reqLogin(data);
   }
 
   return (
@@ -58,10 +48,10 @@ const Login = () => {
               error={errors.password}
               {...register("password")}
             />
-            <LogButton className="hoverUnderLineAnimation">ENTRAR</LogButton>
+            <Button name={"LOGIN"} size={"small"} style={"brand3"} />
           </div>
 
-          <div className="question-div">
+          <div className="questionDiv">
             <p>AINDA NÃO POSSUI UMA CONTA?</p>
 
             <Link to="/register" className="hoverUnderLineAnimation" href="">

@@ -1,28 +1,41 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "../../../../../components/input";
+import { DashContext } from "../../../../../context/DashContext";
 import { StyledButton } from "../../../../../styles/buttons";
 import { newPostSchema } from "./newPostSchema";
 import { StyledDashNewPostForm } from "./style";
 
 
 const DashNewPostForm = () => {
+    const [loadingPost, setLoadingPost] = useState(false);
+    const { createPost } = useContext(DashContext);
+
     const {
         register,
         handleSubmit,
-        formState: { errors },
-    } = useForm({
-        mode: "onBlur",
-        resolver: yupResolver(newPostSchema),
-    });
+        formState: { errors }, reset } = useForm({
+            mode: "onBlur",
+            resolver: yupResolver(newPostSchema),
+        });
 
-    function submit(data) {
-        console.log(data);
+    async function submit(data) {
+        const idLocal = localStorage.getItem("@USER:ID");
+        const dataWithId = { ...data, userId: +idLocal };
+
+        await createPost(dataWithId, setLoadingPost);
+        reset({
+            title: "",
+            image: "",
+            description: ""
+        });
     }
+
 
     return (
         <StyledDashNewPostForm>
-            <form noValidate>
+            <form noValidate onSubmit={handleSubmit(submit)}>
 
                 <div>
                     <Input
@@ -47,7 +60,10 @@ const DashNewPostForm = () => {
                     error={errors.description}
                     {...register("description")} />
 
-                <StyledButton buttonSize="medium" buttonStyle="dashSubmit">
+                <StyledButton
+                    type="submit"
+                    buttonSize="medium"
+                    buttonStyle="dashSubmit">
                     POSTAR
                 </StyledButton>
             </form>

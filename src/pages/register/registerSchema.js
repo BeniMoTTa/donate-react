@@ -1,10 +1,7 @@
 import * as yup from "yup";
 
 export const RegisterSchema = yup.object().shape({
-  name: yup
-    .string()
-    .required("Nome é obrigatório")
-    .matches(/^[A-z\s]+$/, "Apenas letras são permitidas nesse campo"),
+  name: yup.string().required("Nome é obrigatório"),
   email: yup
     .string()
     .email("Digite o email corretamente")

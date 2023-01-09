@@ -1,12 +1,12 @@
 import { GlobalStyled } from "./styles/globalStyle";
-import { ToastContainer} from "react-toastify";
 import { RoutesMain as Routes } from "./routes";
+import { StyledToastify } from "./styles/toastify";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyled />
-      <ToastContainer/>
+      <StyledToastify/>
       <Routes />
     </div>
   );
