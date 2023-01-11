@@ -40,15 +40,19 @@ export const DashProvider = ({ children }) => {
 		const token = localStorage.getItem("@USER:TOKEN");
 		try {
 			setLoadingPost(true);
-			const response = await api.post("/posts", data, {
-				headers: {
-					Authorization: `Bearer ${token}`,
-				},
-			});
-			if (response.statusText === "Created") {
-				loadPosts(idLocal);
-				toast.success("Publicação feita com sucesso!");
-			}
+			const response = await toast.promise(
+				api.post("/posts", data, {
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}),
+				{
+					loading: "Estamos publicando o seu post...",
+					success: "Publicação feita com sucesso!",
+					error: "Ops, Algo deu errado!",
+				}
+			);
+			loadPosts(idLocal);
 		} catch (error) {
 			toast.error(error);
 		} finally {
@@ -61,15 +65,19 @@ export const DashProvider = ({ children }) => {
 		const id = localStorage.getItem("@USER:ID");
 		try {
 			setLoadingUpdateUser(true);
-			const response = await api.patch(`/users/${id}`, data, {
-				headers: {
-					Authorization: `Bearer ${token}`,
-				},
-			});
-			if (response.statusText === "OK") {
-				toast.success("Informações atualizadas com sucesso!");
-				setCurrentUser(response.data);
-			}
+			const response = await toast.promise(
+				api.patch(`/users/${id}`, data, {
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}),
+				{
+					loading: "Estamos atualizando o seu post...",
+					success: "Informações atualizadas com sucesso!",
+					error: "Ops, Algo deu errado!",
+				}
+			);
+			setCurrentUser(response.data);
 		} catch (error) {
 			toast.error(error);
 		} finally {
